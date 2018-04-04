@@ -62,97 +62,24 @@
 						<th>Customer email</th>
 						<th>Timestamp</th>
 						<th>Date booked for</th>
-						<th>Start time</th>
-						<th>End Time</th>
+						<th>Slot No</th>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>name</td>
-						<td>9999999999</td>
-						<td>a@b.com</td>
-						<td>Timestamp</td>
-						<td>Sample date</td>
-						<td>start time</td>
-						<td>end time</td>
-					</tr>
+					<?php 
+						$BOOKINGS = $db->get_results("SELECT b.bid,b.rid, c.fname,c.lname, c.phone,c.email,b.bookingtime, b.bookdate, b.slot_no FROM customers c JOIN bookings b ON c.cid=b.cid;");
+						foreach($BOOKINGS as $BOOKING) {
+
+							echo "<tr>
+							<td>$BOOKING->bid</td>
+							<td>$BOOKING->rid</td>
+							<td>$BOOKING->fname $BOOKING->lname</td>
+							<td>$BOOKING->phone</td>
+							<td>$BOOKING->email</td>
+							<td>$BOOKING->bookingtime</td>
+							<td>$BOOKING->bookdate</td>
+							<td>$BOOKING->slot_no</td>
+							</tr>";
+						}
+					?>
 				</table>
 			</div>
 		</div>

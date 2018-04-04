@@ -11,6 +11,7 @@
     <div class="cd-hero">
         <div class="cd-slider-nav">
             <nav>
+                <div class="session_status">
                 <?php
                     include_once("DBconn.php");
 					session_start();
@@ -23,7 +24,7 @@
 						}else {
 							$CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
 							if($CUST) {
-								echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div>";
+								echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><button>Logout</button></div>";
 							} else {
 								session_unset();
                                 session_destroy();
@@ -34,6 +35,7 @@
                         header("Location: index3.php");
                     }
                     ?>
+                    </div>
                     <span class="cd-marker item-1"></span>
                     <ul>
                         <li>
