@@ -13,32 +13,32 @@
             <nav>
                 <div class="session_status">
                     <?php
-                    include_once("DBconn.php");
-                    session_start();
-                    if($_SESSION["id"]) {
-                        $ID = $_SESSION["id"];
-                        if($ID == 0) {
-                            header("Location: admin.html");
-                        }else {
-                            $CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
-                            if($CUST) {
-                                echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div>";
-                            } else {
-                                session_unset();
-                                session_destroy();
+                            include_once("DBconn.php");
+                            session_start();
+                            if($_SESSION["id"]) {
+                                $ID = $_SESSION["id"];
+                                if($ID == 0) {
+                                    header("Location: admin.html");
+                                }else {
+                                    $CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
+                                    if($CUST) {
+                                        echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div>";
+                                    } else {
+                                        session_unset();
+                                        session_destroy();
+                                    }
+                                }
                             }
-                        }
-                    }
-                    ?>
+                            ?>
                 </div>
                 <span class="cd-marker item-1"></span>
                 <ul>
                     <li class="selected">
-                        <a href="#0">
+                        <a href="index.php">
                             <div class="image-icon">
                                 <img src="img/home-icon.png">
                             </div>
-                            <h6>WELCOME</h6>
+                            <h6>HOME</h6>
                         </a>
                     </li>
                     <li>

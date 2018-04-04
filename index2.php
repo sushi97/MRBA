@@ -12,35 +12,65 @@
     <div class="cd-hero">
         <div class="cd-slider-nav">
             <nav>
+                <div class="session_status">
+                    <?php
+                            include_once("DBconn.php");
+                            session_start();
+                            if($_SESSION["id"]) {
+                                $ID = $_SESSION["id"];
+                                if($ID == 0) {
+                                    header("Location: admin.html");
+                                }else {
+                                    $CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
+                                    if($CUST) {
+                                        echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><button>Logout</button></div>";
+                                    } else {
+                                        session_unset();
+                                        session_destroy();
+                                    }
+                                }
+                            }
+                            ?>
+                </div>
                 <span class="cd-marker item-1"></span>
                 <ul>
                     <li>
                         <a href="index.php">
-                            <div class="image-icon"><img src="img/home-icon.png"></div>
+                            <div class="image-icon">
+                                <img src="img/home-icon.png">
+                            </div>
                             <h6>WELCOME</h6>
                         </a>
                     </li>
                     <li>
-                        <a href="index3.html">
-                            <div class="image-icon"><img src="img/about-icon.png"></div>
+                        <a href="index3.php">
+                            <div class="image-icon">
+                                <img src="img/about-icon.png">
+                            </div>
                             <h6>JOIN US</h6>
                         </a>
                     </li>
                     <li>
                         <a href="#0">
-                            <div class="image-icon"><img src="img/featured-icon.png"></div>
+                            <div class="image-icon">
+                                <img src="img/featured-icon.png">
+                            </div>
                             <h6>BOOK NOW</h6>
                         </a>
                     </li>
                     <li>
-                        <a href="index4.html">
-                            <div class="image-icon"><img src="img/projects-icon.png"></div>
+                        <a href="index4.php">
+                            <div class="image-icon">
+                                <img src="img/projects-icon.png">
+                            </div>
                             <h6>OFFERINGS</h6>
                         </a>
                     </li>
                     <li class="selected">
                         <a href="#0">
-                            <div class="image-icon"><img src="img/contact-icon.png"></div>
+                            <div class="image-icon">
+                                <img src="img/contact-icon.png">
+                            </div>
                             <h6>CONTACT</h6>
                         </a>
                     </li>
@@ -56,9 +86,12 @@
 
             <div class="tot">
                 <div class="left-info">
-                    <p>Please fill up the details in case of any queries and we will get back to you in no time. In case of further correspondance, you may visit our office below:
-                        <br><br>
-                        <em>Lab A314 Computer Department<br>PICT, Pune 411043</em>
+                    <p>Please fill up the details in case of any queries and we will get back to you in no time. In case of
+                        further correspondance, you may visit our office below:
+                        <br>
+                        <br>
+                        <em>Lab A314 Computer Department
+                            <br>PICT, Pune 411043</em>
                     </p>
                 </div>
 
@@ -90,6 +123,12 @@
     <footer>
         <p>Copyright &copy; 2018 YOUROOMS | Designed by Tejas Srivastava</p>
     </footer>
+    <script type="text/javascript">
+        function logout() {
+            document.location = 'logout.php';
+        }
+        LogoutButton.addEventListener('click', logout, false);
+    </script>
 </body>
 
 </html>

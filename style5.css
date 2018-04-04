@@ -2,6 +2,16 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.session_status {
+  display: block;
+  position: relative;
+  float: right;
+  height: auto;
+  width: auto;
+  color: #ffffff; 
+}
+
+
 .overlay {
   position: absolute;
   top: 0;
