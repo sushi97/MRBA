@@ -16,7 +16,7 @@
                     <?php
                             include_once("DBconn.php");
                             session_start();
-                            if($_SESSION["id"]) {
+                            if(isset($_SESSION["id"])) {
                                 $ID = $_SESSION["id"];
                                 if($ID == 0) {
                                     header("Location: admin.html");
