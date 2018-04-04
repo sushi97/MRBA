@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#0">
+                        <a href="book.php">
                             <div class="image-icon">
                                 <img src="img/featured-icon.png">
                             </div>

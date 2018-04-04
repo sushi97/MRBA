@@ -11,7 +11,7 @@ if($_SESSION["id"]) {
     if($EMAIL == "admin@mrba.com" && $PASS == "admin") {
         session_start();
         $_SESSION["id"] = 0;
-        header("Location: admin.html");
+        header("Location: admin_viewBooking.php");
         return;
     }
 

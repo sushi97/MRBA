@@ -8,10 +8,11 @@ if($_SESSION["id"] != 0) {
     return;
 }
 
-$RID;
+$RID = $_POST["rid"];
+var_dump($RID);
 
 if($db->query("DELETE FROM rooms WHERE rid = $RID;")) {
-    echo "Room Deleted sucessfully";
+    header("Location: admin_addRoom.php");
     return;
 } else {
     header("Location: fail.html");

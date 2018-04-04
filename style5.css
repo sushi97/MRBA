@@ -11,7 +11,6 @@ body {
   color: #ffffff; 
 }
 
-
 .overlay {
   position: absolute;
   top: 0;
@@ -206,7 +205,7 @@ footer p {
 
 	/* padding: 2%; */
 }
-.left-form input
+.left-form input,select
 {
 	margin: 10px 10px;
 	width:90%;
@@ -224,7 +223,7 @@ footer p {
 	float: left;
 	/* padding: 2%; */
 }
-.right-form input
+.right-form input,select
 {
 	margin: 10px 10px;
 	width:90%;
@@ -237,3 +236,39 @@ footer p {
  border: 1px solid black;
 }
 .bottom-form {width:100%;display: inline;}
+ table.darkTable tr:nth-child(even)
+ {
+	 background: #DDDDDD;
+ }
+ table.darkTable tr
+ {
+	 height: 40px;
+ }
+
+ #book-button  {
+	 display: inline-block;
+	 background-color: #ffbb05;
+	 color: #ffffff;
+	 font-size: 13px;
+	 padding: 12px 18px;
+	 border-radius: 3px;
+	 text-decoration: none;
+	border: 1px solid #ffbb05
+ }
+
+ #book-button :hover {
+	 background-color: transparent;
+	 border: 1px solid #ffbb05;
+	 color: #000000;
+ }
+.ico
+{
+	width: 25px;
+	height: 25px;
+}
+.yes
+{
+	background-color: lime;
+}
+.no{background-color: red;
+}
