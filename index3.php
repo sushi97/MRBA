@@ -2,7 +2,7 @@
 
 <head>
     <title>sign up and login</title>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
 </head>
@@ -23,7 +23,7 @@
                                 }else {
                                     $CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
                                     if($CUST) {
-                                        echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><button>Logout</button></div>";
+                                        echo "<div>$CUST->fname $CUST->lname</div> <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div><div class=\"primary-button\" id=\"LogoutButton\"><a href=\"myProfile.php\">Profile</a></div>";
                                     } else {
                                         session_unset();
                                         session_destroy();
@@ -135,7 +135,7 @@
         </div>
     </div>
     <footer>
-        <p>Copyright &copy; 2018 YOUROOMS | Designed by Tejas Srivastava</p>
+        <p>Copyright &copy; 2018 YOUROOMS | Designed byMRBA</p>
     </footer>
     <script type="text/javascript">
         function logout() {

@@ -2,7 +2,7 @@
 
 <head>
     <title>home page</title>
-    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 </head>
 
@@ -24,7 +24,7 @@
 						}else {
 							$CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
 							if($CUST) {
-								echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><button>Logout</button></div>";
+								echo "<div>$CUST->fname $CUST->lname</div> <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div><div class=\"primary-button\" id=\"LogoutButton\"><a href=\"myProfile.php\">Profile</a></div>";
 							} else {
 								session_unset();
                                 session_destroy();
@@ -119,13 +119,11 @@
                     <br />
                     <div class="upper-form">
                         <select name="location">
-                            <option value="katraj">Katraj</option>
+                            <option value="katraj" selected>Katraj</option>
                             <option value="hinjewadi">Hinjewadi</option>
                             <option value="aundh">Aundh</option>
                             <option value="baner">Baner</option>
-                            <option value="kalyaninagar">
-                                KalyaniNagar
-                            </option>
+                            <option value="kalyaninagar">KalyaniNagar</option>
                         </select>
                         <div class="primary-button">
                             <button type="submit" id="submit">GET AVAILABLE ROOMS!</button>
@@ -155,7 +153,7 @@
 
                         if(isset($_POST["book_date"])){
 
-						$ROOMS = $db->get_results("SELECT * FROM rooms;");
+						$ROOMS = $db->get_results("SELECT * FROM rooms WHERE type='$TYPE' OR area='$LOCATION';");
 						foreach($ROOMS as $ROOM) {
 							$ACSTR = "no";
 							if($ROOM->ac == 1) {
@@ -232,7 +230,7 @@
     </div>
     </div>
     <footer>
-        <p>Copyright &copy; 2018 YOUROOMS | Designed by Tejas Srivastava</p>
+        <p>Copyright &copy; 2018 YOUROOMS | Designed byMRBA</p>
     </footer>
     <script type="text/javascript">
         function logout() {

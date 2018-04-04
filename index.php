@@ -22,7 +22,7 @@
 						}else {
 							$CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
 							if($CUST) {
-								echo "$CUST->fname $CUST->lname <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div>";
+								echo "<div>$CUST->fname $CUST->lname</div> <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div><div class=\"primary-button\" id=\"LogoutButton\"><a href=\"myProfile.php\">Profile</a></div>";
 							} else {
 								session_unset();
 								session_destroy();
@@ -90,12 +90,12 @@
 				rooms and boardrooms for rent. Catering, coffee service, projection equipment and other services are available
 				to ensure you have everything you need for your meeting. Just show up and get started.</p>
 			<div class="primary-button">
-				<a href="#">Book Now!</a>
+				<a href="book.php">Book Now!</a>
 			</div>
 		</div>
 	</div>
 	<footer>
-		<p>Copyright &copy; 2018 YOUROOMS | Designed by Tejas Srivastava</p>
+		<p>Copyright &copy; 2018 YOUROOMS | Designed byMRBA</p>
 	</footer>
 	<script type="text/javascript">
 		function logout() {

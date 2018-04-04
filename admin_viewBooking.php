@@ -2,7 +2,7 @@
 
 <head>
 	<title>home page</title>
-	<link rel="stylesheet" href="style5.css">
+	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 </head>
 
@@ -63,6 +63,7 @@
 						<th>Timestamp</th>
 						<th>Date booked for</th>
 						<th>Slot No</th>
+						<th>Delete</th>
 					</tr>
 					<?php 
 						$BOOKINGS = $db->get_results("SELECT b.bid,b.rid, c.fname,c.lname, c.phone,c.email,b.bookingtime, b.bookdate, b.slot_no FROM customers c JOIN bookings b ON c.cid=b.cid;");
@@ -77,6 +78,11 @@
 							<td>$BOOKING->bookingtime</td>
 							<td>$BOOKING->bookdate</td>
 							<td>$BOOKING->slot_no</td>
+							<td><form action=\"deleteBooking.php\" method=\"POST\">
+							<input type=\"hidden\" name=\"bid\" value=\"$BOOKING->bid\">
+							<input type=\"submit\" value=\"Delete\">
+							</form>
+							</td>
 							</tr>";
 						}
 					?>
@@ -86,7 +92,7 @@
 	</div>
 	</div>
 	<footer>
-		<p>Copyright &copy; 2018 YOUROOMS | Designed by Tejas Srivastava</p>
+		<p>Copyright &copy; 2018 YOUROOMS | Designed byMRBA</p>
 	</footer>
 	<script type="text/javascript">
 		function logout() {

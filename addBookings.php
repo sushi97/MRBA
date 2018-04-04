@@ -23,4 +23,5 @@ for($I=0; $I<count($SLOTNOS); $I++) {
 	}
 }
 
-echo "Bookings Sucessfull";
+header("Location: success.html");
+return;

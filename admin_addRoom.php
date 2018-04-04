@@ -2,7 +2,7 @@
 
 <head>
 	<title>home page</title>
-	<link rel="stylesheet" href="style5.css">
+	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 </head>
 
@@ -158,7 +158,7 @@
 	</div>
 	</div>
 	<footer>
-		<p>Copyright &copy; 2018 YOUROOMS | Designed by Tejas Srivastava</p>
+		<p>Copyright &copy; 2018 YOUROOMS | Designed byMRBA</p>
 	</footer>
 	<script type="text/javascript">
 		function logout() {

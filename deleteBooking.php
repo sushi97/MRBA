@@ -8,10 +8,10 @@ if($_SESSION["id"] != 0) {
     return;
 }
 
-$RID = $_POST["rid"];
+$BID = $_POST["bid"];
 
-if($db->query("DELETE FROM rooms WHERE rid = $RID;")) {
-    header("Location: admin_addRoom.php");
+if($db->query("DELETE FROM bookings WHERE bid = $BID;")) {
+    header("Location: admin_viewBooking.php");
     return;
 } else {
     header("Location: fail.html");
