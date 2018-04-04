@@ -154,7 +154,7 @@
 		function logout() {
 			document.location = 'logout.php';
 		}
-		LogoutButton.addEventListener('click', logout, false);
+		let logoutButton = document.getElementById("LogoutButton"); 		(logoutButton)?logoutButton.addEventListener('click', logout, false):null;
 	</script>
 </body>
 

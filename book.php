@@ -24,7 +24,7 @@
 						}else {
 							$CUST = $db->get_row("SELECT * FROM customers WHERE cid = $ID");
 							if($CUST) {
-								echo "<div>$CUST->fname $CUST->lname</div> <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div><div class=\"primary-button\" id=\"LogoutButton\"><a href=\"myProfile.php\">Profile</a></div>";
+								echo "<div>$CUST->fname $CUST->lname</div> <div class=\"primary-button\" id=\"LogoutButton\"><a>Logout</a></div><div class=\"primary-button\"><a href=\"myProfile.php\">Profile</a></div>";
 							} else {
 								session_unset();
                                 session_destroy();
@@ -236,7 +236,7 @@
         function logout() {
             document.location = 'logout.php';
         }
-        LogoutButton.addEventListener('click', logout, false);
+        let logoutButton = document.getElementById("LogoutButton"); 		(logoutButton)?logoutButton.addEventListener('click', logout, false):null;
     </script>
 </body>
 
