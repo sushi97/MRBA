@@ -147,10 +147,18 @@
                     </tr>
 
                     <?php
+                    if(isset($_POST["type"]))
+                    {
                         $TYPE = $_POST["type"];
+                    }
+                    if(isset($_POST["location"]))
+                    {
                         $LOCATION = $_POST["location"] ;
+                    }
+                    if(isset($_POST["book_date"]))
+                    {
                         $DATE = $_POST["book_date"];
-
+                    }
                         if(isset($_POST["book_date"])){
 
 						$ROOMS = $db->get_results("SELECT * FROM rooms WHERE type='$TYPE' OR area='$LOCATION';");

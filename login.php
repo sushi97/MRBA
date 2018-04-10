@@ -1,7 +1,7 @@
 <?php
 
 include_once("DBconn.php");
-
+session_start();
 if($_SESSION["id"]) {
     header("Location: index.html");
 } else {
@@ -9,7 +9,7 @@ if($_SESSION["id"]) {
     $PASS = $_POST["log_password"];
 
     if($EMAIL == "admin@mrba.com" && $PASS == "admin") {
-        session_start();
+        //session_start();
         $_SESSION["id"] = 0;
         header("Location: admin_viewBooking.php");
         return;
